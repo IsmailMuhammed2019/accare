@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { 
   Heart, 
@@ -74,10 +75,11 @@ export function Services() {
           {services.map((service, index) => (
             <Card key={index} className="hover:shadow-lg transition-shadow duration-300 border-0 shadow-md overflow-hidden">
               <div className="relative h-48 bg-gradient-to-br from-blue-400 to-purple-600 overflow-hidden">
-                <img
+                <Image
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-300 hover:scale-105"
                   onError={(e) => {
                     console.log('Image failed to load:', service.image);
                     // Hide the image and show gradient background

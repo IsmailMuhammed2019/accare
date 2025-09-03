@@ -5,7 +5,7 @@ import { Loader } from '@googlemaps/js-api-loader'
 
 export function GoogleMap() {
   const mapRef = useRef<HTMLDivElement>(null)
-  const [map, setMap] = useState<any>(null)
+
 
   useEffect(() => {
     const initMap = async () => {
@@ -117,7 +117,7 @@ export function GoogleMap() {
             }))
           })
 
-          setMap(mapInstance)
+
         }
       } catch (error) {
         console.error('Error loading Google Maps:', error)

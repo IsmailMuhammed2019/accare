@@ -33,8 +33,7 @@ export function ContactForm() {
     handleSubmit,
     formState: { errors },
     reset,
-    setValue,
-    watch
+    setValue
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema)
   })

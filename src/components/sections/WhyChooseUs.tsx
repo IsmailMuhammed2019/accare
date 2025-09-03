@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { Heart, Shield, Clock, Users, Award, Home } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 
