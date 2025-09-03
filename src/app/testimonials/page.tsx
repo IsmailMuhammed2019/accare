@@ -157,7 +157,7 @@ export default function TestimonialsPage() {
                   <div className="mb-6">
                     <Quote className="h-8 w-8 text-blue-600 mb-3" />
                     <p className="text-gray-600 italic leading-relaxed">
-                      "{testimonial.quote}"
+                      &ldquo;{testimonial.quote}&rdquo;
                     </p>
                   </div>
 
@@ -198,17 +198,17 @@ export default function TestimonialsPage() {
             <div className="text-center mb-8">
               <Quote className="h-12 w-12 text-white/80 mx-auto mb-4" />
               <h2 className="text-3xl font-bold mb-4">
-                "A&C Care Changed Our Lives"
+                &ldquo;A&C Care Changed Our Lives&rdquo;
               </h2>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
                 <p className="text-xl leading-relaxed mb-6">
-                  "When my mother was diagnosed with Alzheimer's, our family was overwhelmed. 
+                  &ldquo;When my mother was diagnosed with Alzheimer&apos;s, our family was overwhelmed. 
                   A&C Care stepped in and provided not just care, but compassion, understanding, 
                   and support for our entire family. The caregivers became like family members, 
-                  and my mother's quality of life improved significantly."
+                  and my mother&apos;s quality of life improved significantly.&rdquo;
                 </p>
                 <div className="flex items-center space-x-4">
                   <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
@@ -216,7 +216,7 @@ export default function TestimonialsPage() {
                   </div>
                   <div>
                     <p className="font-semibold">Jennifer Martinez</p>
-                    <p className="text-blue-200">Daughter of Alzheimer's Patient</p>
+                    <p className="text-blue-200">Daughter of Alzheimer&apos;s Patient</p>
                     <p className="text-blue-200">Fairfield, CT</p>
                   </div>
                 </div>
@@ -283,7 +283,7 @@ export default function TestimonialsPage() {
               <CardContent className="p-8 text-center">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Services</h3>
                 <p className="text-gray-600 mb-6">
-                  Explore our comprehensive range of in-home care services designed to meet your family's needs.
+                  Explore our comprehensive range of in-home care services designed to meet your family&apos;s needs.
                 </p>
                 <Button asChild variant="outline">
                   <Link href="/services">View Services</Link>

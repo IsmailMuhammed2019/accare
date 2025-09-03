@@ -70,7 +70,7 @@ export function ContactForm() {
             Get in Touch
           </CardTitle>
           <p className="text-gray-600">
-            Start the conversation today. We're here to help you and your loved ones.
+            Start the conversation today. We&apos;re here to help you and your loved ones.
           </p>
         </CardHeader>
         <CardContent>

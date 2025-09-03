@@ -118,7 +118,7 @@ export function HeroSlider() {
         className="h-full"
 
       >
-        {slides.map((slide, index) => (
+        {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div className="relative h-full flex items-center" style={{
               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${slide.backgroundImage})`,

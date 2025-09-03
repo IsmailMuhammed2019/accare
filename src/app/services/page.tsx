@@ -208,7 +208,7 @@ export default function ServicesPage() {
               Flexible Care Options
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We understand that every family's needs are different. That's why we offer 
+              We understand that every family&apos;s needs are different. That&apos;s why we offer 
               flexible care schedules to accommodate your specific situation.
             </p>
           </div>
@@ -286,7 +286,7 @@ export default function ServicesPage() {
                       Personalized Care Plans
                     </h3>
                     <p className="text-gray-600">
-                      Customized care plans tailored to each individual's unique needs and preferences.
+                      Customized care plans tailored to each individual&apos;s unique needs and preferences.
                     </p>
                   </div>
                 </div>

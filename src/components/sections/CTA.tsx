@@ -86,7 +86,7 @@ export function CTA() {
           <Card className="bg-yellow-50 border-yellow-200 text-yellow-800">
             <CardContent className="p-6">
               <h3 className="text-xl font-semibold mb-2">
-                Don't Wait - Start Your Care Journey Today
+                Don&apos;t Wait - Start Your Care Journey Today
               </h3>
               <p className="text-lg">
                 Every day matters when it comes to the well-being of your loved ones. 

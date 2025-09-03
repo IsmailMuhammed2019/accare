@@ -99,7 +99,7 @@ export default function AboutPage() {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Vision</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
                 To be the leading provider of in-home care services in Connecticut, known for our 
-                exceptional quality, compassionate care, and unwavering commitment to our clients' 
+                exceptional quality, compassionate care, and unwavering commitment to our clients&apos; 
                 well-being.
               </p>
               <div className="space-y-4">

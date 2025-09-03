@@ -28,7 +28,7 @@ const testimonials = [
     name: 'Robert Davis',
     role: 'Husband of Client',
     avatar: '/images/testimonials/margaret.jpg',
-    content: 'The personal care services are exceptional. My wife feels comfortable and dignified with the caregivers. A&C Care has given us peace of mind knowing she\'s in good hands.',
+    content: 'The personal care services are exceptional. My wife feels comfortable and dignified with the caregivers. A&C Care has given us peace of mind knowing she&apos;s in good hands.',
     rating: 5
   },
   {
@@ -42,7 +42,7 @@ const testimonials = [
     name: 'David Rodriguez',
     role: 'Son of Client',
     avatar: '/images/testimonials/sarah.jpg',
-    content: 'The light housekeeping and meal preparation services have made my father\'s home much more comfortable. A&C Care goes above and beyond to ensure quality care.',
+    content: 'The light housekeeping and meal preparation services have made my father&apos;s home much more comfortable. A&C Care goes above and beyond to ensure quality care.',
     rating: 5
   }
 ]
@@ -56,7 +56,7 @@ export function Testimonials() {
             What Our Clients Say
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what families are saying about 
+            Don&apos;t just take our word for it. Here&apos;s what families are saying about 
             their experience with A&C Care.
           </p>
         </div>
@@ -74,7 +74,7 @@ export function Testimonials() {
                   </div>
                 </div>
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  "{testimonial.content}"
+                  &ldquo;{testimonial.content}&rdquo;
                 </p>
                 <div className="border-t border-gray-200 pt-4">
                   <div className="flex items-center">

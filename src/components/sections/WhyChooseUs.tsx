@@ -52,8 +52,8 @@ export function WhyChooseUs() {
             Why Choose A&C Care?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We understand that choosing the right care provider for your loved ones is one of the most important decisions you'll make. 
-            Here's why families trust us with their care needs.
+            We understand that choosing the right care provider for your loved ones is one of the most important decisions you&apos;ll make. 
+            Here&apos;s why families trust us with their care needs.
           </p>
         </div>
 

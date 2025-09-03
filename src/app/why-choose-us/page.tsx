@@ -129,7 +129,7 @@ export default function WhyChooseUsPage() {
             Why Choose A&C Care?
           </h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Discover why families across Connecticut trust us with their loved ones' care needs.
+            Discover why families across Connecticut trust us with their loved ones&apos; care needs.
           </p>
         </div>
       </section>
@@ -142,8 +142,8 @@ export default function WhyChooseUsPage() {
               What Sets Us Apart
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We understand that choosing the right care provider is one of the most important decisions you'll make. 
-              Here's why families consistently choose A&C Care.
+              We understand that choosing the right care provider is one of the most important decisions you&apos;ll make. 
+              Here&apos;s why families consistently choose A&C Care.
             </p>
           </div>
 
@@ -183,7 +183,7 @@ export default function WhyChooseUsPage() {
               What Our Families Say
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Don't just take our word for it. Here's what families across Connecticut have to say about their experience with A&C Care.
+              Don&apos;t just take our word for it. Here&apos;s what families across Connecticut have to say about their experience with A&C Care.
             </p>
           </div>
 
@@ -197,7 +197,7 @@ export default function WhyChooseUsPage() {
                     ))}
                   </div>
                   <p className="text-gray-600 mb-6 italic">
-                    "{testimonial.text}"
+                    &ldquo;{testimonial.text}&rdquo;
                   </p>
                   <div className="border-t pt-4">
                     <p className="font-semibold text-gray-900">{testimonial.name}</p>
@@ -311,7 +311,7 @@ export default function WhyChooseUsPage() {
                   <div className="w-2 h-2 bg-white rounded-full mt-2"></div>
                   <div>
                     <h4 className="font-semibold">Ongoing Support</h4>
-                    <p className="text-blue-100 text-sm">We're here for you every step of the way</p>
+                    <p className="text-blue-100 text-sm">We&apos;re here for you every step of the way</p>
                   </div>
                 </div>
               </div>

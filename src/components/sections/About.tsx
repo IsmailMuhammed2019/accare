@@ -39,7 +39,7 @@ export function About() {
               <p>
                 At A&C Care, we bring dedicated professionals right into your home. 
                 Our skilled caregivers are there to support as well as enhance your 
-                loved one's independence.
+                loved one&apos;s independence.
               </p>
               <p>
                 We provide a wide range of services, from personal care and companionship 

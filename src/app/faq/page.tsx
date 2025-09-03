@@ -140,7 +140,7 @@ export default function FAQPage() {
           </h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
             Find answers to common questions about our in-home care services. 
-            Can't find what you're looking for? Contact us directly.
+            Can&apos;t find what you&apos;re looking for? Contact us directly.
           </p>
         </div>
       </section>
@@ -267,7 +267,7 @@ export default function FAQPage() {
               <CardContent className="p-8 text-center">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Care Services</h3>
                 <p className="text-gray-600 mb-6">
-                  Explore our comprehensive range of in-home care services designed to meet your family's needs.
+                  Explore our comprehensive range of in-home care services designed to meet your family&apos;s needs.
                 </p>
                 <Button asChild variant="outline">
                   <Link href="/services">Learn More</Link>

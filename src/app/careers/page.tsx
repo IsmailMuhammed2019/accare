@@ -107,7 +107,7 @@ export default function CareersPage() {
             Join Our Care Team
           </h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Make a difference in people's lives while building a rewarding career. 
+            Make a difference in people&apos;s lives while building a rewarding career. 
             Join A&C Care and become part of a team that truly cares.
           </p>
         </div>
@@ -154,7 +154,7 @@ export default function CareersPage() {
               Current Openings
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're always looking for compassionate, qualified caregivers to join our team. 
+              We&apos;re always looking for compassionate, qualified caregivers to join our team. 
               Browse our current openings and find the perfect fit for you.
             </p>
           </div>
@@ -219,7 +219,7 @@ export default function CareersPage() {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our application process is simple and straightforward. 
-              Here's what you can expect when applying to join our team.
+              Here&apos;s what you can expect when applying to join our team.
             </p>
           </div>
 
@@ -240,7 +240,7 @@ export default function CareersPage() {
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Initial Interview</h3>
               <p className="text-gray-600">
-                We'll schedule a phone or video interview to discuss your experience and goals
+                We&apos;ll schedule a phone or video interview to discuss your experience and goals
               </p>
             </div>
             
@@ -321,7 +321,7 @@ export default function CareersPage() {
               Comprehensive Benefits Package
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We believe in taking care of our caregivers. That's why we offer a comprehensive 
+              We believe in taking care of our caregivers. That&apos;s why we offer a comprehensive 
               benefits package designed to support your health, well-being, and career growth.
             </p>
           </div>
