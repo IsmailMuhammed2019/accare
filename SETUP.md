@@ -162,7 +162,9 @@ src/
 ## Contact Information
 For support or questions about this website:
 - Email: info@accare.com
-- Phone: (203) 904-4883
+- Phone: (203) 904-4883 / (203) 919-3541
+- Email: christine@thecaringservice.com
+- Address: 89 Taylor Ave, Norwalk, CT 06854
 - Website: accare.com
 
 ## License

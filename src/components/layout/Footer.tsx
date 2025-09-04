@@ -130,14 +130,20 @@ export function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="mailto:info@accare.com" className="flex items-center text-sm leading-6 text-gray-300 hover:text-white">
+                    <Link href="tel:+12039193541" className="flex items-center text-sm leading-6 text-gray-300 hover:text-white">
+                      <Phone className="mr-2 h-4 w-4" />
+                      (203) 919-3541
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="mailto:christine@thecaringservice.com" className="flex items-center text-sm leading-6 text-gray-300 hover:text-white">
                       <Mail className="mr-2 h-4 w-4" />
-                      info@accare.com
+                      christine@thecaringservice.com
                     </Link>
                   </li>
                   <li className="flex items-start text-sm leading-6 text-gray-300">
                     <MapPin className="mr-2 h-4 w-4 mt-0.5 flex-shrink-0" />
-                    <span>Connecticut, USA</span>
+                    <span>89 Taylor Ave<br />Norwalk, CT 06854</span>
                   </li>
                 </ul>
               </div>

@@ -63,9 +63,9 @@ a&c_care/                    ← Parent folder (contains logo)
 
 ### **📞 Contact Information Displayed:**
 
-- Phone: +1 (203) 904-4883 / +1 (203) 919-3541
-- Email: contact@accareservice.com
-- Fax: (475) 422-9529
+- Phone: (203) 904-4883 / (203) 919-3541
+- Email: christine@thecaringservice.com
+- Address: 89 Taylor Ave, Norwalk, CT 06854
 
 ---
 

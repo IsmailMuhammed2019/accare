@@ -183,29 +183,29 @@ export function ContactForm() {
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-blue-600" />
                 <div>
-                  <p className="font-medium text-gray-900">+1 (203) 904-4883</p>
+                  <p className="font-medium text-gray-900">(203) 904-4883</p>
                   <p className="text-sm text-gray-600">Primary Phone</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-blue-600" />
                 <div>
-                  <p className="font-medium text-gray-900">+1 (203) 919-3541</p>
+                  <p className="font-medium text-gray-900">(203) 919-3541</p>
                   <p className="text-sm text-gray-600">Secondary Phone</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-blue-600" />
                 <div>
-                  <p className="font-medium text-gray-900">contact@accareservice.com</p>
+                  <p className="font-medium text-gray-900">christine@thecaringservice.com</p>
                   <p className="text-sm text-gray-600">Email Address</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-5 h-5 text-blue-600 text-center font-bold">FAX</div>
+                <div className="w-5 h-5 text-blue-600 text-center font-bold">📍</div>
                 <div>
-                  <p className="font-medium text-gray-900">(475) 422-9529</p>
-                  <p className="text-sm text-gray-600">Fax Number</p>
+                  <p className="font-medium text-gray-900">89 Taylor Ave</p>
+                  <p className="text-sm text-gray-600">Norwalk, CT 06854</p>
                 </div>
               </div>
             </div>

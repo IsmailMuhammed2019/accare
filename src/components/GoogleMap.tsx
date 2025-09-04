@@ -27,7 +27,8 @@ export function GoogleMap() {
                   <p style="margin: 0; font-size: 14px;">
                     <strong>Contact us:</strong><br>
                     📞 (203) 904-4883<br>
-                    📧 contact@accareservice.com
+                    📧 christine@thecaringservice.com<br>
+                    📍 89 Taylor Ave, Norwalk, CT 06854
                   </p>
                 </div>
               </div>
@@ -103,7 +104,8 @@ export function GoogleMap() {
                   Connecticut & Surrounding Areas
                 </p>
                 <p style="margin: 5px 0 0 0; color: #3B82F6; font-size: 12px;">
-                  📞 (203) 904-4883
+                  📞 (203) 904-4883<br>
+                  📧 christine@thecaringservice.com
                 </p>
               </div>
             `

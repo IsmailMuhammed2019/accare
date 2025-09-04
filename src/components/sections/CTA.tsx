@@ -37,8 +37,8 @@ export function CTA() {
                   <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-2">Call Us Today</h3>
                   <div className="space-y-2">
-                    <p className="text-lg font-medium">+1 (203) 904-4883</p>
-                    <p className="text-lg font-medium">+1 (203) 919-3541</p>
+                    <p className="text-lg font-medium">(203) 904-4883</p>
+                    <p className="text-lg font-medium">(203) 919-3541</p>
                   </div>
                 </div>
                 <Button asChild className="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white">
@@ -55,7 +55,7 @@ export function CTA() {
                 <div className="flex-1">
                   <Mail className="w-12 h-12 text-blue-600 mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-2">Send a Message</h3>
-                  <p className="text-gray-600">contact@accareservice.com</p>
+                  <p className="text-gray-600">christine@thecaringservice.com</p>
                 </div>
                 <Button asChild variant="outline" className="mt-6 w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
                   <Link href="/contact">Send Email</Link>

@@ -295,8 +295,7 @@ export default function CareersPage() {
                 <Mail className="h-8 w-8 text-green-600" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Email Us</h3>
-              <p className="text-gray-600 mb-2">careers@accare.com</p>
-              <p className="text-gray-600">hr@accareservice.com</p>
+              <p className="text-gray-600 mb-2">christine@thecaringservice.com</p>
             </div>
           </div>
 

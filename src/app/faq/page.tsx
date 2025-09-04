@@ -223,8 +223,7 @@ export default function FAQPage() {
                 <Mail className="h-8 w-8 text-green-600" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Email Us</h3>
-              <p className="text-gray-600 mb-2">info@accare.com</p>
-              <p className="text-gray-600">contact@accareservice.com</p>
+              <p className="text-gray-600 mb-2">christine@thecaringservice.com</p>
             </div>
             
             <div className="text-center">

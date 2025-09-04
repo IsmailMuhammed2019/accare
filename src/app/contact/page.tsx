@@ -38,8 +38,7 @@ export default function ContactPage() {
                 <Mail className="h-8 w-8 text-green-600" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
-              <p className="text-gray-600">info@accare.com</p>
-              <p className="text-gray-600">contact@accareservice.com</p>
+              <p className="text-gray-600">christine@thecaringservice.com</p>
             </div>
             
             <div className="text-center">
@@ -47,8 +46,8 @@ export default function ContactPage() {
                 <MapPin className="h-8 w-8 text-purple-600" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Location</h3>
-              <p className="text-gray-600">Connecticut, USA</p>
-              <p className="text-gray-600">Serving local communities</p>
+              <p className="text-gray-600">89 Taylor Ave</p>
+              <p className="text-gray-600">Norwalk, CT 06854</p>
             </div>
             
             <div className="text-center">
