@@ -17,28 +17,28 @@ const services = [
     icon: Heart,
     title: 'Personal Care',
     description: 'Assistance with bathing, dressing, and grooming to maintain personal hygiene and dignity.',
-    image: '/images/activities/personal-care-new.jpg',
+    image: '/6.png',
     features: ['Bathing assistance', 'Dressing help', 'Grooming support', 'Personal hygiene']
   },
   {
     icon: Pill,
     title: 'Medication Reminders',
     description: 'Ensuring proper adherence to prescriptions with timely reminders and monitoring.',
-    image: '/images/activities/medication-new.jpg',
+    image: '/7.png',
     features: ['Medication scheduling', 'Dosage monitoring', 'Prescription management', 'Health tracking']
   },
   {
     icon: Utensils,
     title: 'Meal Preparation',
     description: 'Healthy, personalized meal planning and cooking tailored to dietary needs.',
-    image: '/images/activities/meal-prep-new.jpg',
+    image: '/8.png',
     features: ['Nutritional planning', 'Dietary restrictions', 'Fresh meal preparation', 'Hydration monitoring']
   },
   {
     icon: Home,
     title: 'Light Housekeeping',
     description: 'Helping with cleaning, laundry, and organizing to maintain a comfortable living environment.',
-    image: '/images/activities/housekeeping-new.jpg',
+    image: '/9.png',
     features: ['General cleaning', 'Laundry assistance', 'Organization help', 'Maintenance support']
   },
   {

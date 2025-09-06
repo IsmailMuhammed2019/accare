@@ -104,28 +104,36 @@ export function WhyChooseUs() {
             </ul>
           </div>
           
-          <div className="bg-gradient-to-br from-blue-600 to-purple-700 rounded-2xl p-8 text-white">
-            <h4 className="text-xl font-semibold mb-4">Our Commitment</h4>
-            <p className="text-blue-100 mb-6">
-              We are committed to providing the highest quality of care while maintaining the dignity, 
-              independence, and comfort of your loved ones in their own home.
-            </p>
-            <div className="grid grid-cols-2 gap-4 text-sm">
-              <div className="text-center">
-                <div className="text-2xl font-bold">500+</div>
-                <div className="text-blue-200">Families Served</div>
+          <div className="relative">
+            <div className="bg-gradient-to-br from-blue-600 to-purple-700 rounded-2xl p-8 text-white relative overflow-hidden">
+              {/* Background pattern */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold">5+</div>
-                <div className="text-blue-200">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold">24/7</div>
-                <div className="text-blue-200">Care Available</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold">100%</div>
-                <div className="text-blue-200">Licensed Staff</div>
+              <div className="relative z-10">
+                <h4 className="text-xl font-semibold mb-4">Our Commitment</h4>
+                <p className="text-blue-100 mb-6">
+                  We are committed to providing the highest quality of care while maintaining the dignity, 
+                  independence, and comfort of your loved ones in their own home.
+                </p>
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold">500+</div>
+                    <div className="text-blue-200">Families Served</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold">5+</div>
+                    <div className="text-blue-200">Years Experience</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold">24/7</div>
+                    <div className="text-blue-200">Care Available</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold">100%</div>
+                    <div className="text-blue-200">Licensed Staff</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

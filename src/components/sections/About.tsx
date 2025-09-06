@@ -77,6 +77,15 @@ export function About() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
             </div>
+            {/* Additional decorative image */}
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full overflow-hidden shadow-lg border-4 border-white">
+              <Image
+                src="/AC_logo_transparent.webp"
+                alt="A&C Care Logo"
+                fill
+                className="object-cover bg-white"
+              />
+            </div>
           </div>
         </div>
 
