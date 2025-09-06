@@ -18,6 +18,18 @@ export const metadata: Metadata = {
   title: "A&C Care - Professional In-Home Care Services",
   description: "Compassionate in-home care services for seniors. Professional caregivers helping maintain independence and quality of life in the comfort of your own home.",
   keywords: "home care, senior care, in-home care, caregiver, elderly care, Connecticut",
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-512x512.png', sizes: '512x512', type: 'image/png' }
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
+    ],
+    shortcut: '/favicon-32x32.png'
+  }
 };
 
 export default function RootLayout({
