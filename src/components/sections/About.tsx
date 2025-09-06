@@ -70,7 +70,7 @@ export function About() {
           <div className="relative">
             <div className="relative h-96 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/home-sections/about-section.jpg"
+                src="/images/about.jpg"
                 alt="Caregiver helping senior"
                 fill
                 className="object-cover"

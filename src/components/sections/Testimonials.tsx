@@ -6,42 +6,42 @@ const testimonials = [
   {
     name: 'Sarah Johnson',
     role: 'Daughter of Client',
-    avatar: '/images/testimonials/margaret.jpg',
+    avatar: '/2.png',
     content: 'A&C Care has been a blessing for our family. The caregivers are professional, compassionate, and truly care about my mother\'s well-being. They\'ve helped her maintain her independence while ensuring her safety.',
     rating: 5
   },
   {
     name: 'Michael Chen',
     role: 'Son of Client',
-    avatar: '/images/testimonials/robert.jpg',
+    avatar: '/3.png',
     content: 'The medication reminder service has been invaluable. My father\'s health has improved significantly since A&C Care started helping with his medication management. Highly recommended!',
     rating: 5
   },
   {
     name: 'Patricia Williams',
     role: 'Client',
-    avatar: '/images/testimonials/sarah.jpg',
+    avatar: '/4.png',
     content: 'I love having A&C Care in my home. The companionship and meal preparation services have made such a difference in my daily life. The caregivers are like family to me.',
     rating: 5
   },
   {
     name: 'Robert Davis',
     role: 'Husband of Client',
-    avatar: '/images/testimonials/margaret.jpg',
+    avatar: '/5.png',
     content: 'The personal care services are exceptional. My wife feels comfortable and dignified with the caregivers. A&C Care has given us peace of mind knowing she&apos;s in good hands.',
     rating: 5
   },
   {
     name: 'Lisa Thompson',
     role: 'Daughter of Client',
-    avatar: '/images/testimonials/robert.jpg',
+    avatar: '/6.png',
     content: 'Flexible scheduling and reliable service. A&C Care has been there for us 24/7 when we needed them. The caregivers are well-trained and genuinely caring.',
     rating: 5
   },
   {
     name: 'David Rodriguez',
     role: 'Son of Client',
-    avatar: '/images/testimonials/sarah.jpg',
+    avatar: '/7.png',
     content: 'The light housekeeping and meal preparation services have made my father&apos;s home much more comfortable. A&C Care goes above and beyond to ensure quality care.',
     rating: 5
   }

@@ -8,21 +8,21 @@ const teamMembers = [
   {
     name: "Sarah Johnson",
     role: "Founder & CEO",
-    image: "/images/team/sarah.jpg",
+    image: "/2.png",
     bio: "With over 15 years of experience in healthcare, Sarah founded A&C Care with a vision to provide compassionate, personalized care to seniors in their own homes.",
     email: "sarah@accare.com"
   },
   {
     name: "Michael Chen",
     role: "Director of Care Services",
-    image: "/images/team/michael.jpg",
+    image: "/3.png",
     bio: "Michael oversees all care operations, ensuring the highest standards of service delivery and caregiver training across our organization.",
     email: "michael@accare.com"
   },
   {
     name: "Dr. Emily Rodriguez",
     role: "Medical Director",
-    image: "/images/team/emily.jpg",
+    image: "/4.png",
     bio: "Dr. Rodriguez provides medical oversight and ensures our care protocols meet the highest medical standards and best practices.",
     email: "emily@accare.com"
   }

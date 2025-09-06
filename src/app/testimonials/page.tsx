@@ -13,7 +13,7 @@ const testimonials = [
     rating: 5,
     service: "Personal Care & Companionship",
     duration: "2 years",
-    image: "/images/testimonials/margaret.jpg",
+    image: "/5.png",
     quote: "A&C Care has been a blessing for our family. The caregivers are professional, compassionate, and truly care about my mother's well-being. I can finally have peace of mind knowing she's in good hands.",
     highlights: ["Professional staff", "Compassionate care", "Peace of mind"]
   },
@@ -24,7 +24,7 @@ const testimonials = [
     rating: 5,
     service: "24/7 Care Services",
     duration: "1.5 years",
-    image: "/images/testimonials/robert.jpg",
+    image: "/6.png",
     quote: "The quality of care my father receives is exceptional. The team is responsive, reliable, and goes above and beyond to ensure his comfort and safety. Highly recommended!",
     highlights: ["Exceptional quality", "Responsive team", "Reliable service"]
   },
@@ -35,7 +35,7 @@ const testimonials = [
     rating: 5,
     service: "Medication Management & Housekeeping",
     duration: "1 year",
-    image: "/images/testimonials/sarah.jpg",
+    image: "/7.png",
     quote: "We've been with A&C Care for over a year now, and the consistency and quality of care has been outstanding. The caregivers become like family to us.",
     highlights: ["Consistent care", "Family-like relationship", "Outstanding quality"]
   },
@@ -46,7 +46,7 @@ const testimonials = [
     rating: 5,
     service: "Dementia Care",
     duration: "8 months",
-    image: "/images/testimonials/david.jpg",
+    image: "/8.png",
     quote: "The specialized care for my wife's dementia has been incredible. The caregivers are patient, understanding, and know exactly how to handle challenging situations.",
     highlights: ["Specialized care", "Patient staff", "Expert handling"]
   },
@@ -57,7 +57,7 @@ const testimonials = [
     rating: 5,
     service: "Respite Care",
     duration: "6 months",
-    image: "/images/testimonials/linda.jpg",
+    image: "/9.png",
     quote: "As a family caregiver, I was exhausted. A&C Care's respite services gave me the break I needed while ensuring my husband received excellent care.",
     highlights: ["Respite support", "Family relief", "Excellent care"]
   },
@@ -68,7 +68,7 @@ const testimonials = [
     rating: 5,
     service: "Post-Surgery Care",
     duration: "3 months",
-    image: "/images/testimonials/michael.jpg",
+    image: "/1.png",
     quote: "After my surgery, I needed help with daily activities. A&C Care provided exactly what I needed - professional, caring support that helped me recover faster.",
     highlights: ["Post-surgery support", "Faster recovery", "Professional care"]
   }

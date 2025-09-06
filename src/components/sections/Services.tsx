@@ -17,42 +17,42 @@ const services = [
     icon: Heart,
     title: 'Personal Care',
     description: 'Assistance with bathing, dressing, and grooming to maintain personal hygiene and dignity.',
-    image: '/6.png',
+    image: '/images/personalcare.jpg',
     features: ['Bathing assistance', 'Dressing help', 'Grooming support', 'Personal hygiene']
   },
   {
     icon: Pill,
     title: 'Medication Reminders',
     description: 'Ensuring proper adherence to prescriptions with timely reminders and monitoring.',
-    image: '/7.png',
+    image: '/images/Medication_Management.jpg',
     features: ['Medication scheduling', 'Dosage monitoring', 'Prescription management', 'Health tracking']
   },
   {
     icon: Utensils,
     title: 'Meal Preparation',
     description: 'Healthy, personalized meal planning and cooking tailored to dietary needs.',
-    image: '/8.png',
+    image: '/images/food-prep.jpg',
     features: ['Nutritional planning', 'Dietary restrictions', 'Fresh meal preparation', 'Hydration monitoring']
   },
   {
     icon: Home,
     title: 'Light Housekeeping',
     description: 'Helping with cleaning, laundry, and organizing to maintain a comfortable living environment.',
-    image: '/9.png',
+    image: '/images/light_house.jpg',
     features: ['General cleaning', 'Laundry assistance', 'Organization help', 'Maintenance support']
   },
   {
     icon: Users,
     title: 'Companionship',
     description: 'Friendly conversation and emotional support to combat loneliness and isolation.',
-    image: '/images/activities/companionship-new.jpg',
+    image: '/images/companionship.jpg',
     features: ['Social interaction', 'Emotional support', 'Activity companionship', 'Family communication']
   },
   {
     icon: Activity,
     title: 'Mobility Support',
     description: 'Assistance with walking, exercising, and getting around safely in the home.',
-    image: '/images/activities/mobility-new.jpg',
+    image: 'images/mobility-support.jpg',
     features: ['Walking assistance', 'Exercise support', 'Fall prevention', 'Safety monitoring']
   }
 ]
@@ -73,7 +73,7 @@ export function Services() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow duration-300 border-0 shadow-md overflow-hidden">
+            <Card key={index} className="hover:shadow-lg transition-shadow py-0 duration-300 border-0 shadow-md overflow-hidden">
               <div className="relative h-48 bg-gradient-to-br from-blue-400 to-purple-600 overflow-hidden">
                 <Image
                   src={service.image}
@@ -86,7 +86,6 @@ export function Services() {
                     e.currentTarget.style.display = 'none';
                   }}
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-30"></div>
                 <div className="absolute top-4 right-4 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg">
                   <service.icon className="w-6 h-6 text-white" />
                 </div>
@@ -113,7 +112,7 @@ export function Services() {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
+        {/* <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-12">
             <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Why Choose A&C Care?
@@ -149,7 +148,7 @@ export function Services() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

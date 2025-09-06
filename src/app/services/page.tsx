@@ -12,7 +12,7 @@ const services = [
     icon: Heart,
     title: 'Personal Care',
     description: 'Assistance with daily personal hygiene and grooming needs.',
-    image: '/images/activities/personal-care.jpg',
+    image: '/images/personalcare.jpg',
     features: [
       'Bathing and showering assistance',
       'Dressing and grooming help',
@@ -28,7 +28,7 @@ const services = [
     icon: Users,
     title: 'Companionship',
     description: 'Meaningful social interaction and emotional support.',
-    image: '/images/activities/companionship.jpg',
+    image: '/images/companionship.jpg',
     features: [
       'Conversation and social interaction',
       'Reading and entertainment',
@@ -44,7 +44,7 @@ const services = [
     icon: Pill,
     title: 'Medication Management',
     description: 'Safe and timely medication administration and monitoring.',
-    image: '/images/activities/medication.jpg',
+    image: '/images/Medication_Management.jpg',
     features: [
       'Medication reminders',
       'Prescription pickup',
@@ -60,7 +60,7 @@ const services = [
     icon: Utensils,
     title: 'Meal Preparation',
     description: 'Nutritious meal planning, preparation, and feeding assistance.',
-    image: '/images/activities/meal-prep.jpg',
+    image: '/images/food-prep.jpg',
     features: [
       'Meal planning and grocery shopping',
       'Healthy meal preparation',
@@ -76,7 +76,7 @@ const services = [
     icon: Sparkles,
     title: 'Light Housekeeping',
     description: 'Maintaining a clean, safe, and comfortable living environment.',
-    image: '/images/activities/housekeeping.jpg',
+    image: '/images/light_house.jpg',
     features: [
       'General cleaning and tidying',
       'Laundry and linen care',
@@ -92,7 +92,7 @@ const services = [
     icon: Activity,
     title: 'Mobility Support',
     description: 'Assistance with movement, exercise, and physical therapy.',
-    image: '/images/activities/mobility.jpg',
+    image: '/images/mobility-support.jpg',
     features: [
       'Walking and transfer assistance',
       'Exercise and stretching support',
@@ -171,7 +171,6 @@ export default function ServicesPage() {
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-20"></div>
                   <div className={`absolute top-4 right-4 inline-flex items-center justify-center w-12 h-12 rounded-full ${service.bgColor} ${service.color}`}>
                     <service.icon className="h-6 w-6" />
                   </div>
