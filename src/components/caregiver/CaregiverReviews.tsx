@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Star } from 'lucide-react';
 import api from '@/lib/api';
@@ -140,7 +139,7 @@ export default function CaregiverReviews() {
               <Star className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
               <h3 className="text-lg font-medium">No reviews yet</h3>
               <p className="text-muted-foreground">
-                You haven't received any reviews from patients yet.
+                You haven&apos;t received any reviews from patients yet.
               </p>
             </div>
           ) : (

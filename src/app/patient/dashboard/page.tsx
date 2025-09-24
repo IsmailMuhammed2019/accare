@@ -11,14 +11,9 @@ import {
   Calendar, 
   Clock, 
   User, 
-  Star, 
-  MessageSquare, 
-  Bell,
   LogOut,
   Plus,
-  MapPin,
   Phone,
-  Mail
 } from 'lucide-react';
 import api from '@/lib/api';
 
@@ -82,7 +77,7 @@ export default function PatientDashboard() {
       try {
         const profileResponse = await api.get('/patients/my-profile');
         setProfile(profileResponse.data);
-      } catch (error) {
+      } catch {
         console.log('No profile found yet');
       }
     } catch (error) {

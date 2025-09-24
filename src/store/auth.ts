@@ -110,7 +110,7 @@ export const useAuthStore = create<AuthState>()(
           
           set({ accessToken });
           localStorage.setItem('accessToken', accessToken);
-        } catch (error) {
+        } catch {
           get().logout();
         }
       },

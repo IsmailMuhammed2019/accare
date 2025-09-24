@@ -28,7 +28,7 @@ export interface AuthActions {
   login: (email: string, password: string) => Promise<void>;
   register: (userData: RegisterData) => Promise<void>;
   logout: () => Promise<void>;
-  refreshToken: () => Promise<void>;
+  refreshAccessToken: () => Promise<void>;
   updateUser: (userData: Partial<User>) => void;
   clearError: () => void;
   setLoading: (loading: boolean) => void;
@@ -75,9 +75,9 @@ export const useAuthStore = create<AuthStore>()(
           // Store tokens in localStorage
           localStorage.setItem('accessToken', accessToken);
           localStorage.setItem('refreshToken', refreshToken);
-        } catch (error: any) {
+        } catch (error: unknown) {
           set({
-            error: error.response?.data?.message || 'Login failed',
+            error: (error as { response?: { data?: { message?: string } } })?.response?.data?.message || 'Login failed',
             isLoading: false,
           });
           throw error;
@@ -102,9 +102,9 @@ export const useAuthStore = create<AuthStore>()(
           // Store tokens in localStorage
           localStorage.setItem('accessToken', accessToken);
           localStorage.setItem('refreshToken', refreshToken);
-        } catch (error: any) {
+        } catch (error: unknown) {
           set({
-            error: error.response?.data?.message || 'Registration failed',
+            error: (error as { response?: { data?: { message?: string } } })?.response?.data?.message || 'Registration failed',
             isLoading: false,
           });
           throw error;
@@ -114,7 +114,7 @@ export const useAuthStore = create<AuthStore>()(
       logout: async () => {
         try {
           await api.post('/auth/logout');
-        } catch (error) {
+        } catch {
           // Ignore logout errors
         } finally {
           set({
@@ -131,7 +131,7 @@ export const useAuthStore = create<AuthStore>()(
         }
       },
 
-      refreshToken: async () => {
+      refreshAccessToken: async () => {
         const { refreshToken } = get();
         if (!refreshToken) {
           throw new Error('No refresh token available');

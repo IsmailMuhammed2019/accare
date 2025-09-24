@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Calendar, Clock, MapPin, User } from 'lucide-react';
+import { Calendar, MapPin, User } from 'lucide-react';
 import api from '@/lib/api';
 
 interface Appointment {
@@ -51,9 +51,9 @@ export default function CaregiverAppointments() {
       case 'SCHEDULED':
         return <Badge variant="default">Scheduled</Badge>;
       case 'IN_PROGRESS':
-        return <Badge variant="warning">In Progress</Badge>;
+        return <Badge variant="secondary">In Progress</Badge>;
       case 'COMPLETED':
-        return <Badge variant="success">Completed</Badge>;
+        return <Badge variant="default">Completed</Badge>;
       case 'CANCELLED':
         return <Badge variant="destructive">Cancelled</Badge>;
       case 'NO_SHOW':
@@ -160,7 +160,7 @@ export default function CaregiverAppointments() {
           <div className="text-center py-8">
             <Calendar className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
             <h3 className="text-lg font-medium">No appointments scheduled</h3>
-            <p className="text-muted-foreground">You don't have any appointments at the moment.</p>
+            <p className="text-muted-foreground">You don&apos;t have any appointments at the moment.</p>
           </div>
         )}
       </CardContent>

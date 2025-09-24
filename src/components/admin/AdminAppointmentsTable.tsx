@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { MoreHorizontal, Edit, Trash2, Calendar, Clock } from 'lucide-react';
+import { MoreHorizontal, Edit, Calendar} from 'lucide-react';
 import api from '@/lib/api';
 
 interface Appointment {
@@ -37,11 +37,7 @@ export default function AdminAppointmentsTable() {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  useEffect(() => {
-    fetchAppointments();
-  }, [page]);
-
-  const fetchAppointments = async () => {
+  const fetchAppointments = useCallback(async () => {
     try {
       setLoading(true);
       const response = await api.get(`/appointments?page=${page}&limit=10`);
@@ -52,16 +48,20 @@ export default function AdminAppointmentsTable() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [page]);
+
+  useEffect(() => {
+    fetchAppointments();
+  }, [fetchAppointments]);
 
   const getStatusBadge = (status: string) => {
     switch (status) {
       case 'SCHEDULED':
         return <Badge variant="default">Scheduled</Badge>;
       case 'IN_PROGRESS':
-        return <Badge variant="warning">In Progress</Badge>;
+        return <Badge variant="secondary">In Progress</Badge>;
       case 'COMPLETED':
-        return <Badge variant="success">Completed</Badge>;
+        return <Badge variant="default">Completed</Badge>;
       case 'CANCELLED':
         return <Badge variant="destructive">Cancelled</Badge>;
       case 'NO_SHOW':

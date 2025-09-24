@@ -108,7 +108,7 @@ export default function PatientCaregivers() {
                             {caregiver.user.firstName} {caregiver.user.lastName}
                           </h3>
                           {caregiver.isVerified && (
-                            <Badge variant="success">Verified</Badge>
+                            <Badge variant="default">Verified</Badge>
                           )}
                         </div>
                         

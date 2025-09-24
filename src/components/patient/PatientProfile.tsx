@@ -1,12 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Badge } from '@/components/ui/badge';
 import { Save, Edit } from 'lucide-react';
 import api from '@/lib/api';
 import { toast } from 'sonner';
@@ -58,11 +57,7 @@ export default function PatientProfile() {
     insuranceInfo: '',
   });
 
-  useEffect(() => {
-    fetchProfile();
-  }, []);
-
-  const fetchProfile = async () => {
+  const fetchPatientProfile = useCallback(async () => {
     try {
       setLoading(true);
       const response = await api.get('/patients/my-profile');
@@ -88,13 +83,17 @@ export default function PatientProfile() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    fetchPatientProfile();
+  }, [fetchPatientProfile]);
 
   const handleSave = async () => {
     try {
       setSaving(true);
       await api.patch('/patients/my-profile', formData);
-      await fetchProfile();
+      await fetchPatientProfile();
       setIsEditing(false);
       toast.success('Profile updated successfully!');
     } catch (error) {

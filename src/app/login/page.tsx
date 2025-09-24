@@ -26,7 +26,7 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const { login, register, error: authError } = useAuthStore();
+  const { login, register } = useAuthStore();
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -67,9 +67,10 @@ export default function LoginPage() {
           router.push('/patient');
         }
       }
-    } catch (error: any) {
-      setError(error.message || 'An error occurred');
-      toast.error(error.message || 'An error occurred');
+    } catch (error: unknown) {
+      const errorMessage = (error as { message?: string })?.message || 'An error occurred';
+      setError(errorMessage);
+      toast.error(errorMessage);
     } finally {
       setLoading(false);
     }

@@ -164,9 +164,9 @@ export default function CaregiverProfile() {
               <Label>Verification Status</Label>
               <div className="flex items-center space-x-2">
                 {profile?.isVerified ? (
-                  <Badge variant="success">Verified</Badge>
+                  <Badge variant="default">Verified</Badge>
                 ) : (
-                  <Badge variant="warning">Pending Verification</Badge>
+                  <Badge variant="secondary">Pending Verification</Badge>
                 )}
               </div>
             </div>

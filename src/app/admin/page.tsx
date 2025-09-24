@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Users, UserCheck, Calendar, Star, TrendingUp, AlertCircle } from 'lucide-react';
+import { Users, UserCheck, Calendar, Star, AlertCircle } from 'lucide-react';
 import AdminUsersTable from '@/components/admin/AdminUsersTable';
 import AdminCaregiversTable from '@/components/admin/AdminCaregiversTable';
 import AdminPatientsTable from '@/components/admin/AdminPatientsTable';

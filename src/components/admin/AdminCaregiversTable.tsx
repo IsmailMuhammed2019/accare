@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { MoreHorizontal, Edit, Trash2, UserCheck, Star } from 'lucide-react';
+import { MoreHorizontal, Edit, UserCheck,} from 'lucide-react';
 import api from '@/lib/api';
 
 interface Caregiver {
@@ -42,11 +42,7 @@ export default function AdminCaregiversTable() {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  useEffect(() => {
-    fetchCaregivers();
-  }, [page]);
-
-  const fetchCaregivers = async () => {
+  const fetchCaregivers = useCallback(async () => {
     try {
       setLoading(true);
       const response = await api.get(`/caregivers?page=${page}&limit=10`);
@@ -57,7 +53,11 @@ export default function AdminCaregiversTable() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [page]);
+
+  useEffect(() => {
+    fetchCaregivers();
+  }, [fetchCaregivers]);
 
   const handleVerify = async (caregiverId: string) => {
     try {
@@ -129,9 +129,9 @@ export default function AdminCaregiversTable() {
                 </TableCell>
                 <TableCell>
                   {caregiver.isVerified ? (
-                    <Badge variant="success">Verified</Badge>
+                    <Badge variant="default">Verified</Badge>
                   ) : (
-                    <Badge variant="warning">Pending</Badge>
+                    <Badge variant="secondary">Pending</Badge>
                   )}
                 </TableCell>
                 <TableCell>{caregiver._count.appointments}</TableCell>

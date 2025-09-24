@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { MoreHorizontal, Edit, Trash2, MapPin } from 'lucide-react';
+import { MoreHorizontal, Edit, MapPin } from 'lucide-react';
 import api from '@/lib/api';
 
 interface Patient {
@@ -46,11 +46,7 @@ export default function AdminPatientsTable() {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  useEffect(() => {
-    fetchPatients();
-  }, [page]);
-
-  const fetchPatients = async () => {
+  const fetchPatients = useCallback(async () => {
     try {
       setLoading(true);
       const response = await api.get(`/patients?page=${page}&limit=10`);
@@ -61,7 +57,11 @@ export default function AdminPatientsTable() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [page]);
+
+  useEffect(() => {
+    fetchPatients();
+  }, [fetchPatients]);
 
   const calculateAge = (dateOfBirth: string) => {
     const today = new Date();
