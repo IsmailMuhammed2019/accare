@@ -1,22 +1,22 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useAuthStore } from '@/store/auth';
+import { useAuthStore } from '@/store/supabase-auth';
 import { useRouter } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { CaregiverLayout } from '@/components/caregiver/CaregiverLayout';
 import { 
   Calendar, 
   Clock, 
   User, 
-  LogOut,
   Phone,
   DollarSign,
   Award
 } from 'lucide-react';
-import api from '@/lib/api';
+import { appointmentApi, caregiverApi } from '@/lib/api-supabase';
 
 interface Appointment {
   id: string;
@@ -25,8 +25,8 @@ interface Appointment {
   endTime: string;
   status: string;
   patient: {
-    firstName: string;
-    lastName: string;
+    first_name: string;
+    last_name: string;
     phone: string;
   };
   notes?: string;
@@ -67,14 +67,16 @@ export default function CaregiverDashboard() {
     try {
       setIsLoading(true);
       
+      if (!user?.id) return;
+      
       // Fetch appointments
-      const appointmentsResponse = await api.get('/appointments');
-      setAppointments(appointmentsResponse.data.data || []);
+      const appointments = await appointmentApi.getUserAppointments(user.id, 'CAREGIVER');
+      setAppointments(appointments);
       
       // Fetch caregiver profile
       try {
-        const profileResponse = await api.get('/caregivers/me');
-        setProfile(profileResponse.data);
+        const caregiverProfile = await caregiverApi.getProfile(user.id);
+        setProfile(caregiverProfile);
       } catch {
         console.log('No profile found yet');
       }
@@ -85,8 +87,8 @@ export default function CaregiverDashboard() {
     }
   };
 
-  const handleLogout = () => {
-    logout();
+  const handleLogout = async () => {
+    await logout();
     router.push('/');
   };
 
@@ -133,22 +135,15 @@ export default function CaregiverDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900">Caregiver Dashboard</h1>
-              <p className="text-gray-600">Welcome back, {user?.firstName}</p>
-            </div>
-            <Button onClick={handleLogout} variant="outline">
-              <LogOut className="h-4 w-4 mr-2" />
-              Logout
-            </Button>
+    <CaregiverLayout>
+      <div className="space-y-6">
+        {/* Page Header */}
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+            <p className="text-gray-600">Welcome back, {user?.first_name}</p>
           </div>
         </div>
-      </header>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Quick Stats */}
@@ -264,7 +259,7 @@ export default function CaregiverDashboard() {
                               {formatDate(appointment.startTime)} at {formatTime(appointment.startTime)}
                             </p>
                             <p className="text-sm text-gray-600">
-                              with {appointment.patient.firstName} {appointment.patient.lastName}
+                              with {appointment.patient?.first_name} {appointment.patient?.last_name}
                             </p>
                             {appointment.notes && (
                               <p className="text-sm text-gray-500 mt-1">{appointment.notes}</p>
@@ -397,6 +392,6 @@ export default function CaregiverDashboard() {
           </TabsContent>
         </Tabs>
       </div>
-    </div>
+    </CaregiverLayout>
   );
 }

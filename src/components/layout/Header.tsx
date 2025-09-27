@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { Menu, X, Phone } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 
 const navigation = [
@@ -44,9 +44,10 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-gray-900 hover:text-blue-600 transition-colors duration-200"
+                className="text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md transition-all duration-200 relative group"
               >
                 {item.name}
+                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gray-900 transform -translate-x-1/2 transition-all duration-200 group-hover:w-4/5"></span>
               </Link>
             ))}
           </div>
@@ -63,19 +64,13 @@ export function Header() {
                 Get Started
               </Link>
             </Button>
-            <Button variant="ghost" size="sm" asChild>
-              <Link href="tel:+12039044883" className="flex items-center">
-                <Phone className="mr-2 h-4 w-4" />
-                Call Now
-              </Link>
-            </Button>
           </div>
 
           {/* Mobile menu button */}
           <div className="lg:hidden">
             <button
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 transition-all duration-200 transform hover:scale-105 active:scale-95"
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
@@ -104,7 +99,7 @@ export function Header() {
               </Link>
               <button
                 type="button"
-                className="rounded-md p-2 text-gray-700 hover:text-blue-600 hover:bg-gray-100"
+                className="rounded-md p-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 active:scale-95"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
@@ -119,7 +114,7 @@ export function Header() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
+                    className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-all duration-200 transform hover:translate-x-1 active:translate-x-0"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -137,12 +132,6 @@ export function Header() {
                 <Button asChild className="w-full">
                   <Link href="/auth/register" onClick={() => setMobileMenuOpen(false)}>
                     Get Started
-                  </Link>
-                </Button>
-                <Button variant="ghost" asChild className="w-full">
-                  <Link href="tel:+12039044883" className="flex items-center justify-center" onClick={() => setMobileMenuOpen(false)}>
-                    <Phone className="mr-2 h-4 w-4" />
-                    Call Now
                   </Link>
                 </Button>
               </div>

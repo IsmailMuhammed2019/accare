@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAuthStore } from '@/store/auth';
+import { useAuthStore } from '@/store/supabase-auth';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -42,7 +42,7 @@ export default function LoginPage() {
         router.push('/');
       }
     } catch (error: unknown) {
-      setError((error as { response?: { data?: { message?: string } } })?.response?.data?.message || 'Login failed. Please try again.');
+      setError((error as { message?: string })?.message || 'Login failed. Please try again.');
     } finally {
       setIsLoading(false);
     }

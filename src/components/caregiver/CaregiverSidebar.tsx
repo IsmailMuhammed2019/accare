@@ -11,21 +11,19 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useAuthStore } from '@/store/supabase-auth';
 import {
   LayoutDashboard,
-  Users,
-  UserCheck,
-  Heart,
   Calendar,
   Star,
+  MessageSquare,
+  User,
+  Clock,
+  MapPin,
   Bell,
   Settings,
   LogOut,
   Menu,
-  BarChart3,
-  MessageSquare,
-  Shield,
+  Heart,
   Activity,
-  UserPlus,
-  AlertTriangle,
+  Award,
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -34,90 +32,83 @@ interface SidebarProps {
 
 const navigationItems = [
   {
-    title: 'Overview',
-    href: '/admin/dashboard',
+    title: 'Dashboard',
+    href: '/caregiver/dashboard',
     icon: LayoutDashboard,
-    description: 'Dashboard overview and analytics',
-  },
-  {
-    title: 'User Management',
-    href: '/admin/users',
-    icon: Users,
-    description: 'Manage all users and approvals',
-    badge: 'Pending',
-  },
-  {
-    title: 'Caregivers',
-    href: '/admin/caregivers',
-    icon: UserCheck,
-    description: 'Manage caregiver profiles',
-  },
-  {
-    title: 'Patients',
-    href: '/admin/patients',
-    icon: Heart,
-    description: 'Manage patient profiles',
+    description: 'Overview and analytics',
   },
   {
     title: 'Appointments',
-    href: '/admin/appointments',
+    href: '/caregiver/appointments',
     icon: Calendar,
-    description: 'Schedule and manage appointments',
+    description: 'Manage your appointments',
+  },
+  {
+    title: 'My Profile',
+    href: '/caregiver/profile',
+    icon: User,
+    description: 'Update your profile',
   },
   {
     title: 'Reviews',
-    href: '/admin/reviews',
+    href: '/caregiver/reviews',
     icon: Star,
-    description: 'Manage reviews and ratings',
-  },
-  {
-    title: 'Notifications',
-    href: '/admin/notifications',
-    icon: Bell,
-    description: 'System notifications',
+    description: 'View patient reviews',
   },
   {
     title: 'Messages',
-    href: '/admin/messages',
+    href: '/caregiver/messages',
     icon: MessageSquare,
-    description: 'User communications',
+    description: 'Communicate with patients',
   },
   {
-    title: 'Analytics',
-    href: '/admin/analytics',
-    icon: BarChart3,
-    description: 'Detailed analytics and reports',
+    title: 'Availability',
+    href: '/caregiver/availability',
+    icon: Clock,
+    description: 'Set your working hours',
+  },
+  {
+    title: 'Location',
+    href: '/caregiver/location',
+    icon: MapPin,
+    description: 'Update your location',
+  },
+  {
+    title: 'Notifications',
+    href: '/caregiver/notifications',
+    icon: Bell,
+    description: 'Manage notifications',
   },
   {
     title: 'Settings',
-    href: '/admin/settings',
+    href: '/caregiver/settings',
     icon: Settings,
-    description: 'System configuration',
+    description: 'Account settings',
   },
 ];
 
 const quickActions = [
   {
-    title: 'Approve Users',
-    href: '/admin/users?filter=pending',
-    icon: UserPlus,
+    title: 'View Today\'s Schedule',
+    href: '/caregiver/appointments?filter=today',
+    icon: Calendar,
     color: 'text-gray-700',
   },
   {
-    title: 'View Alerts',
-    href: '/admin/dashboard?tab=alerts',
-    icon: AlertTriangle,
+    title: 'Check Messages',
+    href: '/caregiver/messages',
+    icon: MessageSquare,
     color: 'text-gray-700',
   },
   {
-    title: 'System Health',
-    href: '/admin/dashboard?tab=health',
-    icon: Activity,
+    title: 'Update Availability',
+    href: '/caregiver/availability',
+    icon: Clock,
     color: 'text-gray-700',
   },
 ];
 
-export function AdminSidebar({ className }: SidebarProps) {
+export function CaregiverSidebar({ className }: SidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
   const { logout } = useAuthStore();
@@ -134,9 +125,9 @@ export function AdminSidebar({ className }: SidebarProps) {
       <div className="flex h-16 items-center justify-between px-6 border-b">
         <div className="flex items-center space-x-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gray-800">
-            <Shield className="h-4 w-4 text-white" />
+            <Heart className="h-4 w-4 text-white" />
           </div>
-          <span className="text-lg font-semibold text-gray-900">Admin Panel</span>
+          <span className="text-lg font-semibold text-gray-900">Caregiver Portal</span>
         </div>
         <Button
           variant="ghost"
@@ -152,12 +143,12 @@ export function AdminSidebar({ className }: SidebarProps) {
       <div className="p-4 border-b bg-gray-50">
         <div className="grid grid-cols-2 gap-3">
           <div className="text-center">
-            <div className="text-2xl font-bold text-gray-700">12</div>
-            <div className="text-xs text-gray-600">Pending</div>
+            <div className="text-2xl font-bold text-gray-700">8</div>
+            <div className="text-xs text-gray-600">Today</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-gray-800">156</div>
-            <div className="text-xs text-gray-600">Active</div>
+            <div className="text-2xl font-bold text-gray-800">4.9</div>
+            <div className="text-xs text-gray-600">Rating</div>
           </div>
         </div>
       </div>
@@ -184,11 +175,6 @@ export function AdminSidebar({ className }: SidebarProps) {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between">
                     <span className="truncate">{item.title}</span>
-                    {item.badge && (
-                      <span className="ml-2 inline-flex items-center rounded-full bg-orange-100 px-2 py-0.5 text-xs font-medium text-orange-800">
-                        {item.badge}
-                      </span>
-                    )}
                   </div>
                   <p className="text-xs text-gray-500 truncate">{item.description}</p>
                 </div>
@@ -235,7 +221,7 @@ export function AdminSidebar({ className }: SidebarProps) {
   );
 }
 
-export function AdminSidebarMobile() {
+export function CaregiverSidebarMobile() {
   const pathname = usePathname();
   const router = useRouter();
   const { logout } = useAuthStore();
@@ -259,9 +245,9 @@ export function AdminSidebarMobile() {
           <div className="flex h-16 items-center justify-between px-6 border-b">
             <div className="flex items-center space-x-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gray-800">
-                <Shield className="h-4 w-4 text-white" />
+                <Heart className="h-4 w-4 text-white" />
               </div>
-              <span className="text-lg font-semibold text-gray-900">Admin Panel</span>
+              <span className="text-lg font-semibold text-gray-900">Caregiver Portal</span>
             </div>
           </div>
 
@@ -269,12 +255,12 @@ export function AdminSidebarMobile() {
           <div className="p-4 border-b bg-gray-50">
             <div className="grid grid-cols-2 gap-3">
               <div className="text-center">
-                <div className="text-2xl font-bold text-gray-700">12</div>
-                <div className="text-xs text-gray-600">Pending</div>
+                <div className="text-2xl font-bold text-gray-700">8</div>
+                <div className="text-xs text-gray-600">Today</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-gray-800">156</div>
-                <div className="text-xs text-gray-600">Active</div>
+                <div className="text-2xl font-bold text-gray-800">4.9</div>
+                <div className="text-xs text-gray-600">Rating</div>
               </div>
             </div>
           </div>
@@ -302,11 +288,6 @@ export function AdminSidebarMobile() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between">
                         <span className="truncate">{item.title}</span>
-                        {item.badge && (
-                          <span className="ml-2 inline-flex items-center rounded-full bg-orange-100 px-2 py-0.5 text-xs font-medium text-orange-800">
-                            {item.badge}
-                          </span>
-                        )}
                       </div>
                       <p className="text-xs text-gray-500 truncate">{item.description}</p>
                     </div>
