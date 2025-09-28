@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Loader } from '@googlemaps/js-api-loader'
 
 export function GoogleMap() {
