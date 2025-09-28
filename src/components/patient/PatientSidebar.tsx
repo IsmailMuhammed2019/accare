@@ -127,14 +127,14 @@ export function PatientSidebar({ className }: SidebarProps) {
   };
 
   return (
-    <div className={cn('flex h-full w-64 flex-col border-r bg-white', className)}>
+    <div className={cn('flex h-full w-64 flex-col border-r bg-gradient-sidebar shadow-colorful', className)}>
       {/* Header */}
-      <div className="flex h-16 items-center justify-between px-6 border-b">
+      <div className="flex h-16 items-center justify-between px-6 border-b border-primary/10">
         <div className="flex items-center space-x-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gray-800">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-primary shadow-colorful">
             <Heart className="h-4 w-4 text-white" />
           </div>
-          <span className="text-lg font-semibold text-gray-900">Patient Portal</span>
+          <span className="text-lg font-semibold text-primary">Patient Portal</span>
         </div>
         <Button
           variant="ghost"

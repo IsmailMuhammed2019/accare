@@ -26,10 +26,52 @@ module.exports = {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          50: "oklch(0.95 0.05 285)",
+          100: "oklch(0.9 0.1 285)",
+          200: "oklch(0.8 0.15 285)",
+          300: "oklch(0.7 0.18 285)",
+          400: "oklch(0.6 0.19 285)",
+          500: "oklch(0.58 0.2 285)",
+          600: "oklch(0.5 0.18 285)",
+          700: "oklch(0.4 0.15 285)",
+          800: "oklch(0.3 0.12 285)",
+          900: "oklch(0.2 0.1 285)",
+          950: "oklch(0.1 0.08 285)",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        success: {
+          DEFAULT: "oklch(0.55 0.15 142)",
+          foreground: "oklch(0.98 0 0)",
+          50: "oklch(0.95 0.05 142)",
+          100: "oklch(0.9 0.1 142)",
+          500: "oklch(0.55 0.15 142)",
+          600: "oklch(0.5 0.18 142)",
+          700: "oklch(0.45 0.2 142)",
+        },
+        warning: {
+          DEFAULT: "oklch(0.65 0.18 38)",
+          foreground: "oklch(0.98 0 0)",
+          50: "oklch(0.95 0.05 38)",
+          100: "oklch(0.9 0.1 38)",
+          500: "oklch(0.65 0.18 38)",
+          600: "oklch(0.6 0.2 38)",
+          700: "oklch(0.55 0.22 38)",
+        },
+        info: {
+          DEFAULT: "oklch(0.6 0.15 199)",
+          foreground: "oklch(0.98 0 0)",
+          50: "oklch(0.95 0.05 199)",
+          100: "oklch(0.9 0.1 199)",
+          500: "oklch(0.6 0.15 199)",
+          600: "oklch(0.55 0.18 199)",
+          700: "oklch(0.5 0.2 199)",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -38,10 +80,6 @@ module.exports = {
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",

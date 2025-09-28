@@ -9,7 +9,7 @@ interface AdminLayoutProps {
 
 export function AdminLayout({ children }: AdminLayoutProps) {
   return (
-    <div className="flex h-screen bg-gray-50">
+    <div className="flex h-screen bg-gradient-to-br from-primary/5 via-background to-primary/5">
       {/* Desktop Sidebar */}
       <div className="hidden md:flex">
         <AdminSidebar />

@@ -148,8 +148,8 @@ export default function AdminDashboard() {
         {/* Page Header */}
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Dashboard Overview</h1>
-            <p className="text-gray-600">Welcome back, {user?.first_name}</p>
+            <h1 className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">Dashboard Overview</h1>
+            <p className="text-primary/80">Welcome back, {user?.first_name}</p>
           </div>
         </div>
         {/* Stats Cards */}
@@ -157,11 +157,11 @@ export default function AdminDashboard() {
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Total Users</CardTitle>
-              <Users className="h-4 w-4 text-gray-500" />
+              <Users className="h-4 w-4 text-primary" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">{stats.totalUsers}</div>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-primary/70">
                 {stats.activeUsers} active, {stats.pendingVerifications} pending
               </p>
             </CardContent>
@@ -170,11 +170,11 @@ export default function AdminDashboard() {
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Caregivers</CardTitle>
-              <UserCheck className="h-4 w-4 text-gray-500" />
+              <UserCheck className="h-4 w-4 text-success" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">{stats.totalCaregivers}</div>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-primary/70">
                 Professional caregivers
               </p>
             </CardContent>
@@ -187,20 +187,20 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">{stats.totalPatients}</div>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-primary/70">
                 Registered patients
               </p>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="bg-gradient-to-br from-warning-50 to-warning-100 dark:from-warning-900/20 dark:to-warning-800/20 border-warning-200 dark:border-warning-800">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Appointments</CardTitle>
-              <Calendar className="h-4 w-4 text-gray-500" />
+              <CardTitle className="text-sm font-medium text-warning-700 dark:text-warning-300">Appointments</CardTitle>
+              <Calendar className="h-4 w-4 text-warning-600 dark:text-warning-400" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">{stats.totalAppointments}</div>
-              <p className="text-xs text-gray-500">
+              <div className="text-2xl font-bold text-warning-600 dark:text-warning-400">{stats.totalAppointments}</div>
+              <p className="text-xs text-warning-600/70 dark:text-warning-400/70">
                 {stats.completedAppointments} completed, {stats.pendingAppointments} pending
               </p>
             </CardContent>
@@ -233,7 +233,7 @@ export default function AdminDashboard() {
                       </div>
                       <div>
                         <p className="text-sm font-medium">New user registered</p>
-                        <p className="text-xs text-gray-500">2 minutes ago</p>
+                        <p className="text-xs text-primary/70">2 minutes ago</p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-4">
@@ -242,7 +242,7 @@ export default function AdminDashboard() {
                       </div>
                       <div>
                         <p className="text-sm font-medium">Appointment completed</p>
-                        <p className="text-xs text-gray-500">5 minutes ago</p>
+                        <p className="text-xs text-primary/70">5 minutes ago</p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-4">
@@ -251,7 +251,7 @@ export default function AdminDashboard() {
                       </div>
                       <div>
                         <p className="text-sm font-medium">Caregiver verification needed</p>
-                        <p className="text-xs text-gray-500">10 minutes ago</p>
+                        <p className="text-xs text-primary/70">10 minutes ago</p>
                       </div>
                     </div>
                   </div>

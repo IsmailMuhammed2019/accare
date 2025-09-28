@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useAuthStore } from '@/store/supabase-auth';
 import { useRouter } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -41,31 +41,22 @@ interface PatientProfile {
   zipCode: string;
   emergencyContact: string;
   emergencyPhone: string;
-  medicalHistory?: string;
-  allergies?: string;
-  medications?: string;
-  mobilityLevel?: string;
-  careNeeds?: string;
-  insuranceInfo?: string;
+  medicalHistory?: string | undefined;
+  allergies?: string | undefined;
+  medications?: string | undefined;
+  mobilityLevel?: string | undefined;
+  careNeeds?: string | undefined;
+  insuranceInfo?: string | undefined;
 }
 
 export default function PatientDashboard() {
-  const { user, logout } = useAuthStore();
+  const { user } = useAuthStore();
   const router = useRouter();
   const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [profile, setProfile] = useState<PatientProfile | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    if (!user || user.role !== 'PATIENT') {
-      router.push('/auth/login');
-      return;
-    }
-    
-    fetchDashboardData();
-  }, [user, router]);
-
-  const fetchDashboardData = async () => {
+  const fetchDashboardData = useCallback(async () => {
     try {
       setIsLoading(true);
       
@@ -73,12 +64,40 @@ export default function PatientDashboard() {
       
       // Fetch appointments
       const appointments = await appointmentApi.getUserAppointments(user.id, 'PATIENT');
-      setAppointments(appointments);
+      // Transform the data to match the interface
+      const transformedAppointments = appointments.map(apt => ({
+        id: apt.id,
+        serviceType: apt.service_type,
+        startTime: apt.start_time,
+        endTime: apt.end_time,
+        status: apt.status,
+        caregiver: { first_name: '', last_name: '', phone: '' }, // Default empty caregiver
+        notes: apt.notes || undefined
+      }));
+      setAppointments(transformedAppointments);
       
       // Fetch patient profile
       try {
         const patientProfile = await patientApi.getProfile(user.id);
-        setProfile(patientProfile);
+        // Transform the data to match the interface
+        const transformedProfile = patientProfile ? {
+          id: patientProfile.id,
+          dateOfBirth: patientProfile.date_of_birth || '',
+          gender: patientProfile.gender || '',
+          address: patientProfile.address || '',
+          city: patientProfile.city || '',
+          state: patientProfile.state || '',
+          zipCode: patientProfile.zip_code || '',
+          emergencyContact: patientProfile.emergency_contact_name || '',
+          emergencyPhone: patientProfile.emergency_contact_phone || '',
+          medicalHistory: patientProfile.medical_history || undefined,
+          allergies: patientProfile.allergies || undefined,
+          medications: patientProfile.current_medications || undefined,
+          mobilityLevel: patientProfile.mobility_level || undefined,
+          careNeeds: Array.isArray(patientProfile.care_needs) ? patientProfile.care_needs.join(', ') : patientProfile.care_needs || undefined,
+          insuranceInfo: patientProfile.insurance_info || undefined
+        } : null;
+        setProfile(transformedProfile);
       } catch {
         console.log('No profile found yet');
       }
@@ -87,12 +106,16 @@ export default function PatientDashboard() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [user]);
 
-  const handleLogout = async () => {
-    await logout();
-    router.push('/');
-  };
+  useEffect(() => {
+    if (!user || user.role !== 'PATIENT') {
+      router.push('/auth/login');
+      return;
+    }
+    
+    fetchDashboardData();
+  }, [user, router, fetchDashboardData]);
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -142,54 +165,54 @@ export default function PatientDashboard() {
         {/* Page Header */}
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-            <p className="text-gray-600">Welcome back, {user?.first_name}</p>
+            <h1 className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">Dashboard</h1>
+            <p className="text-primary/80">Welcome back, {user?.first_name}</p>
           </div>
         </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <Card>
+          <Card className="bg-gradient-to-br from-info-50 to-info-100 dark:from-info-900/20 dark:to-info-800/20 border-info-200 dark:border-info-800">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Upcoming Appointments</CardTitle>
-              <Calendar className="h-4 w-4 text-muted-foreground" />
+              <CardTitle className="text-sm font-medium text-info-700 dark:text-info-300">Upcoming Appointments</CardTitle>
+              <Calendar className="h-4 w-4 text-info-600 dark:text-info-400" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">
+              <div className="text-2xl font-bold text-info-600 dark:text-info-400">
                 {appointments.filter(apt => apt.status === 'SCHEDULED').length}
               </div>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-xs text-info-600/70 dark:text-info-400/70">
                 Scheduled appointments
               </p>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="bg-gradient-to-br from-success-50 to-success-100 dark:from-success-900/20 dark:to-success-800/20 border-success-200 dark:border-success-800">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Completed Sessions</CardTitle>
-              <Clock className="h-4 w-4 text-muted-foreground" />
+              <CardTitle className="text-sm font-medium text-success-700 dark:text-success-300">Completed Sessions</CardTitle>
+              <Clock className="h-4 w-4 text-success-600 dark:text-success-400" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">
+              <div className="text-2xl font-bold text-success-600 dark:text-success-400">
                 {appointments.filter(apt => apt.status === 'COMPLETED').length}
               </div>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-xs text-success-600/70 dark:text-success-400/70">
                 Total completed
               </p>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="bg-gradient-to-br from-warning-50 to-warning-100 dark:from-warning-900/20 dark:to-warning-800/20 border-warning-200 dark:border-warning-800">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Profile Status</CardTitle>
-              <User className="h-4 w-4 text-muted-foreground" />
+              <CardTitle className="text-sm font-medium text-warning-700 dark:text-warning-300">Profile Status</CardTitle>
+              <User className="h-4 w-4 text-warning-600 dark:text-warning-400" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">
+              <div className="text-2xl font-bold text-warning-600 dark:text-warning-400">
                 {profile ? 'Complete' : 'Incomplete'}
               </div>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-xs text-warning-600/70 dark:text-warning-400/70">
                 {profile ? 'Profile is complete' : 'Complete your profile'}
               </p>
             </CardContent>
@@ -362,6 +385,7 @@ export default function PatientDashboard() {
             </Card>
           </TabsContent>
         </Tabs>
+      </div>
       </div>
     </PatientLayout>
   );

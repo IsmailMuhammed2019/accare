@@ -140,76 +140,76 @@ export default function CaregiverDashboard() {
         {/* Page Header */}
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-            <p className="text-gray-600">Welcome back, {user?.first_name}</p>
+            <h1 className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">Dashboard</h1>
+            <p className="text-primary/80">Welcome back, {user?.first_name}</p>
           </div>
         </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <Card>
+          <Card className="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 border-primary-200 dark:border-primary-800">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Today&apos;s Appointments</CardTitle>
-              <Calendar className="h-4 w-4 text-muted-foreground" />
+              <CardTitle className="text-sm font-medium text-primary-700 dark:text-primary-300">Today&apos;s Appointments</CardTitle>
+              <Calendar className="h-4 w-4 text-primary-600 dark:text-primary-400" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">
+              <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">
                 {appointments.filter(apt => {
                   const today = new Date().toDateString();
                   return new Date(apt.startTime).toDateString() === today && apt.status === 'SCHEDULED';
                 }).length}
               </div>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-xs text-primary-600/70 dark:text-primary-400/70">
                 Scheduled for today
               </p>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="bg-gradient-to-br from-info-50 to-info-100 dark:from-info-900/20 dark:to-info-800/20 border-info-200 dark:border-info-800">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">This Week</CardTitle>
-              <Clock className="h-4 w-4 text-muted-foreground" />
+              <CardTitle className="text-sm font-medium text-info-700 dark:text-info-300">This Week</CardTitle>
+              <Clock className="h-4 w-4 text-info-600 dark:text-info-400" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">
+              <div className="text-2xl font-bold text-info-600 dark:text-info-400">
                 {appointments.filter(apt => {
                   const weekFromNow = new Date();
                   weekFromNow.setDate(weekFromNow.getDate() + 7);
                   return new Date(apt.startTime) <= weekFromNow && apt.status === 'SCHEDULED';
                 }).length}
               </div>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-xs text-info-600/70 dark:text-info-400/70">
                 Upcoming appointments
               </p>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="bg-gradient-to-br from-success-50 to-success-100 dark:from-success-900/20 dark:to-success-800/20 border-success-200 dark:border-success-800">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Completed</CardTitle>
-              <Award className="h-4 w-4 text-muted-foreground" />
+              <CardTitle className="text-sm font-medium text-success-700 dark:text-success-300">Completed</CardTitle>
+              <Award className="h-4 w-4 text-success-600 dark:text-success-400" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">
+              <div className="text-2xl font-bold text-success-600 dark:text-success-400">
                 {appointments.filter(apt => apt.status === 'COMPLETED').length}
               </div>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-xs text-success-600/70 dark:text-success-400/70">
                 Total completed
               </p>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="bg-gradient-to-br from-warning-50 to-warning-100 dark:from-warning-900/20 dark:to-warning-800/20 border-warning-200 dark:border-warning-800">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Hourly Rate</CardTitle>
-              <DollarSign className="h-4 w-4 text-muted-foreground" />
+              <CardTitle className="text-sm font-medium text-warning-700 dark:text-warning-300">Hourly Rate</CardTitle>
+              <DollarSign className="h-4 w-4 text-warning-600 dark:text-warning-400" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">
+              <div className="text-2xl font-bold text-warning-600 dark:text-warning-400">
                 ${profile?.hourlyRate || 0}
               </div>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-xs text-warning-600/70 dark:text-warning-400/70">
                 Per hour
               </p>
             </CardContent>
@@ -392,6 +392,8 @@ export default function CaregiverDashboard() {
           </TabsContent>
         </Tabs>
       </div>
+      </div>
     </CaregiverLayout>
+    </div>
   );
 }
